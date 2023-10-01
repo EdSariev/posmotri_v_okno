@@ -176,9 +176,6 @@ ol {
 .result__video {
   width: 100%;
 }
-.preloader {
-  position: absolute;
-}
 
 .search-form {
   display: flex;
