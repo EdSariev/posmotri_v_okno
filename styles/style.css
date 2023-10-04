@@ -18,6 +18,7 @@ html {
   background-color: #1b1919;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 h1,
@@ -32,6 +33,7 @@ blockquote,
 fieldset {
   margin: 0;
   padding: 0;
+  border: none;
 }
 
 ul,
@@ -41,16 +43,16 @@ ol {
 
 .content {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  margin: 0 30px;
   gap: 30px;
+  inline-size: 100%;
 }
 
 .search-form {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 711px;
+  align-items: center;
+  gap: 40px;
+  margin-top: 16px;
 }
 
 .content__details {
@@ -61,6 +63,7 @@ ol {
 }
 
 .title {
+  padding: 0;
   color: #fff;
   font-family: "Oswald", sans-serif;
   font-size: 75px;
@@ -76,62 +79,53 @@ ol {
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
-  line-height: 94%; /* 70.5px */
+  line-height: 94%;
   text-transform: uppercase;
 }
 
 .content__list {
   position: relative;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  overflow: auto;
+  padding: 2px;
+  margin-bottom: 1px;
 }
 
 .content__video-card {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .content__video-card-title {
-  padding-top: 5px;
-  padding-left: 3px;
+  padding-top: 2px;
+  padding-left: 2px;
   color: #fff;
   font-family: "Oswald", sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
-  line-height: 100%; /* 30px */
+  line-height: 100%;
   text-transform: uppercase;
 }
 
 .content__video-card-description {
-  padding-left: 3px;
+  padding-top: 2px;
+  padding-left: 2px;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 16.2px; /* 90% */
+  line-height: 16.2px;
 }
 
 .content__video-card-thumbnail {
   width: 194px;
   height: 103px;
-  object-fit: contain;
-}
-
-.content__video-card-description-container {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  width: 200px;
-}
-
-.content__list-item {
-  width: 394px;
-  gap: 30px;
-  margin: 2px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .content__card-link {
@@ -164,25 +158,19 @@ ol {
 }
 
 .result {
-  display: flex;
-  flex-direction: column;
-  gap: 13px;
+  align-self: flex-end;
 }
 
 .result__video-container {
-  display: flex;
   position: relative;
+  height: 386px;
 }
 
 .result__video {
-  width: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
   object-position: center;
-}
-
-.search-form {
-  display: flex;
-  gap: 40px;
 }
 
 .search-form__fieldset {
@@ -232,10 +220,6 @@ ol {
   white-space: nowrap;
 }
 
-fieldset {
-  border: none;
-}
-
 .search-form__label {
   display: flex;
   gap: 5px;
@@ -252,8 +236,6 @@ fieldset {
 }
 
 .button {
-  background-color: transparent;
-  border: 1px solid currentColor;
   color: #fff;
   text-align: center;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -261,15 +243,20 @@ fieldset {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  display: flex;
-  width: 399px;
-  height: 34px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  cursor: pointer;
+  inline-size: 100%;
+  padding: 6px 0;
+}
+
+.search-form__submit-button {
+  cursor: pointer;
+  width: 194px;
+  flex-shrink: 0;
+  align-self: flex-end;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  cursor: pointer;
-  margin: 2px;
 }
 
 .button:active {
@@ -289,18 +276,6 @@ fieldset {
   outline-offset: 1px;
 }
 
-.search-form__submit-button {
-  cursor: pointer;
-  margin-top: 20px;
-  width: 194px;
-  height: 34px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
 .search-form__label-text {
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -312,8 +287,14 @@ fieldset {
   cursor: pointer;
 }
 
+.search-form__label:hover {
+  text-decoration: none;
+}
+
 .search-form__checkbox-list {
   display: flex;
+  gap: 6px;
+  padding-top: px;
 }
 
 .search-form__pseudo-checkbox {
@@ -322,6 +303,8 @@ fieldset {
   height: 19px;
   border: 1px solid #fff;
   cursor: pointer;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-form__pseudo-checkbox:active {
@@ -335,5 +318,4 @@ fieldset {
   background-color: #fff;
   inline-size: 15px;
   block-size: 15px;
-  margin: 1px 0 0 1px;
 }
