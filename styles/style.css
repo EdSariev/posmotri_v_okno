@@ -43,7 +43,6 @@ ol {
 
 .content {
   display: flex;
-  margin: 0 30px;
   gap: 30px;
   inline-size: 100%;
 }
@@ -51,15 +50,15 @@ ol {
 .search-form {
   display: flex;
   align-items: center;
-  gap: 40px;
-  margin-top: 16px;
+  justify-content: space-between;
+  padding-bottom: 4px;
 }
 
 .content__details {
   display: flex;
   flex-direction: column;
+  gap: 21px;
   height: 534px;
-  gap: 26px;
 }
 
 .title {
@@ -85,12 +84,13 @@ ol {
 
 .content__list {
   position: relative;
-  overflow: auto;
-  display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 2px;
-  margin-bottom: 1px;
+  overflow: auto;
+}
+
+.content__list-item {
+  padding: 2px 2px 16px 2px;
 }
 
 .content__video-card {
@@ -158,12 +158,16 @@ ol {
 }
 
 .result {
+  display: flex;
+  flex-direction: column;
   align-self: flex-end;
+  gap: 16px;
 }
 
 .result__video-container {
   position: relative;
   height: 386px;
+  width: 711px;
 }
 
 .result__video {
@@ -176,10 +180,13 @@ ol {
 .search-form__fieldset {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 5px;
   border: none;
-  inline-size: 100%;
+  padding-left: 11px;
+}
+
+.search-form__fieldset:first-child {
+  padding-left: 0px;
 }
 
 .search-form__fieldset-title {
@@ -189,6 +196,11 @@ ol {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.search-form__label:hover {
+  text-decoration: underline 1px #fff;
+  text-underline-offset: 5px;
 }
 
 .search-form__textfield {
@@ -226,10 +238,6 @@ ol {
   align-items: center;
 }
 
-.search-form__label:hover {
-  text-decoration: underline 1px #fff;
-}
-
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 1px;
@@ -246,8 +254,9 @@ ol {
   border: 1px solid #fff;
   background-color: transparent;
   cursor: pointer;
-  inline-size: 100%;
+  inline-size: 99%;
   padding: 6px 0;
+  margin: 0 2px 2px 2px;
 }
 
 .search-form__submit-button {
@@ -287,14 +296,10 @@ ol {
   cursor: pointer;
 }
 
-.search-form__label:hover {
-  text-decoration: none;
-}
-
 .search-form__checkbox-list {
   display: flex;
-  gap: 6px;
-  padding-top: px;
+  padding-bottom: 6px;
+  gap: 3px;
 }
 
 .search-form__pseudo-checkbox {
